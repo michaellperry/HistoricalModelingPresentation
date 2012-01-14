@@ -1,0 +1,115 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ThoughtCloud_Presentation="clr-namespace:ThoughtCloud_Presentation" xmlns:HistoricalModelingPresentation="clr-namespace:HistoricalModelingPresentation" x:Class="HistoricalModelingPresentation.Views.GiftCardView"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="DataBackgroundBrush" Color="#FF5F6C2A"/>
+		<SolidColorBrush x:Key="DataBorderBrush" Color="#FF818181"/>
+		<SolidColorBrush x:Key="DataOddBackgroundBrush" Color="#36000000"/>
+	</UserControl.Resources>
+    
+    <Viewbox>
+        <Grid x:Name="LayoutRoot" Width="400" Height="300">
+        	<Grid Margin="153,88,156,111">
+
+        		<ThoughtCloud_Presentation:Cloud x:Name="Clear" Margin="0,3,0,34"/>
+
+        		<HistoricalModelingPresentation:StormCloud x:Name="Stormy" Width="91"/>
+
+        	</Grid>
+        	<Border x:Name="LocalTable" Margin="0,0,35,31" VerticalAlignment="Bottom" BorderThickness="2" BorderBrush="{StaticResource DataBorderBrush}" Background="{StaticResource DataBackgroundBrush}" HorizontalAlignment="Right" Width="139">
+        		<Grid>
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="Auto"/>
+        			</Grid.RowDefinitions>
+        			<Grid.ColumnDefinitions>
+        				<ColumnDefinition Width="0.284*"/>
+        				<ColumnDefinition Width="0.716*"/>
+        			</Grid.ColumnDefinitions>
+        			<Border Margin="0" d:LayoutOverrides="Width, Height">
+        				<TextBlock TextWrapping="Wrap" Text="123" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Grid.Column="1" Margin="0" d:LayoutOverrides="Width, Height" >
+        				<TextBlock TextWrapping="Wrap" Text="$20.00" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Margin="0" Grid.Row="1" d:LayoutOverrides="Width, Height" Background="#36000000" >
+        				<TextBlock TextWrapping="Wrap" Text="456" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Grid.Column="1" Margin="0" Grid.Row="1" d:LayoutOverrides="Width" Background="{StaticResource DataOddBackgroundBrush}" >
+        				<TextBlock TextWrapping="Wrap" Text="$40.00" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+        				<TextBlock TextWrapping="Wrap" Text="789" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Grid.Column="1" Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+        				<TextBlock TextWrapping="Wrap" Text="$12.47" Foreground="White" Margin="4,2"/>
+        			</Border>
+        		</Grid>
+        	</Border>
+        	<HistoricalModelingPresentation:CashRegister x:Name="CashRegister" Margin="49,0,0,15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="87" Width="82"/>
+        	<Border x:Name="LocalQueue" Height="53" Margin="153,0,192,37" VerticalAlignment="Bottom" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,0,2,2">
+        		<Grid>
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="0.38*"/>
+        				<RowDefinition Height="Auto"/>
+        			</Grid.RowDefinitions>
+        			<Border Grid.Row="1" Background="{StaticResource DataOddBackgroundBrush}">
+        				<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2"><Run Text="456"/><LineBreak/><Run Text="-$15.00"/></TextBlock>
+        			</Border>
+        		</Grid>
+        	</Border>
+        	<Border x:Name="ServerQueue" Margin="153,8,192,0" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,2,2,0" Height="76" VerticalAlignment="Top">
+        		<Grid>
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="0.282*"/>
+        			</Grid.RowDefinitions>
+        			<Border Background="{StaticResource DataOddBackgroundBrush}">
+        				<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2"><Run Text="456"/><LineBreak/><Run Text="-$15.00"/></TextBlock>
+        			</Border>
+        			<Border Grid.Row="1">
+        				<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2" Text="123 -$13.42"/>
+        			</Border>
+        		</Grid>
+        	</Border>
+        	<Border x:Name="ServerTable" Margin="0,15,35,0" BorderThickness="2" BorderBrush="{StaticResource DataBorderBrush}" Background="{StaticResource DataBackgroundBrush}" HorizontalAlignment="Right" Width="139" VerticalAlignment="Top">
+        		<Grid>
+        			<Grid.RowDefinitions>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="Auto"/>
+        				<RowDefinition Height="Auto"/>
+        			</Grid.RowDefinitions>
+        			<Grid.ColumnDefinitions>
+        				<ColumnDefinition Width="0.284*"/>
+        				<ColumnDefinition Width="0.716*"/>
+        			</Grid.ColumnDefinitions>
+        			<Border Margin="0" d:LayoutOverrides="Width, Height">
+        				<TextBlock TextWrapping="Wrap" Text="123" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Grid.Column="1" Margin="0" d:LayoutOverrides="Width, Height" >
+        				<TextBlock TextWrapping="Wrap" Text="$20.00" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Margin="0" Grid.Row="1" d:LayoutOverrides="Width, Height" Background="#36000000" >
+        				<TextBlock TextWrapping="Wrap" Text="456" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Grid.Column="1" Margin="0" Grid.Row="1" d:LayoutOverrides="Width" Background="{StaticResource DataOddBackgroundBrush}" >
+        				<TextBlock TextWrapping="Wrap" Text="$40.00" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+        				<TextBlock TextWrapping="Wrap" Text="789" Foreground="White" Margin="4,2"/>
+        			</Border>
+        			<Border Grid.Column="1" Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+        				<TextBlock TextWrapping="Wrap" Text="$12.47" Foreground="White" Margin="4,2"/>
+        			</Border>
+        		</Grid>
+        	</Border>
+        </Grid>
+    </Viewbox>
+</UserControl>
