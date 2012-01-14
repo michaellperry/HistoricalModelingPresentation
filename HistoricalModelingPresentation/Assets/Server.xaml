@@ -1,0 +1,92 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="ThoughtCloud_Presentation.Server"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+	<Viewbox x:Name="LayoutRoot">
+<Canvas Width="359.366846628959" Height="469.35791525475" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Canvas Canvas.Left="-7.36437959858449E-06" Canvas.Top="5.02656985190697E-06">
+    <Canvas>
+      <Canvas>
+        <Path Data="M154.75,296.11218L363.75,243.61218 531.5,249.36218 528.5,612.61218 403.25,825.61218 169.5,769.11218 154.75,296.11218z" Fill="#FFFFFFFF" Stroke="{x:Null}" StrokeThickness="1" ></Path>
+        <Canvas>
+          <Path Data="M363.70083,243.50326L531.9118,249.63086 404.09406,306.03452 154.77598,296.26206 363.70083,243.50326z" Stroke="{x:Null}" StrokeThickness="1">
+            <Path.Fill>
+              <LinearGradientBrush StartPoint="367.669524970703,243.503246508789" EndPoint="368.352814970703,321.041396508789" MappingMode="Absolute" SpreadMethod="Pad">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#FF000000" Offset="0" ></GradientStop>
+                  <GradientStop Color="#00000000" Offset="1" ></GradientStop>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </Path.Fill>
+          </Path>
+          <Path Data="M531.39497,249.13188L528.29145,612.11242 403.25401,825.07754 403.42554,305.81484 531.39497,249.13188z" Stroke="{x:Null}" StrokeThickness="1">
+            <Path.Fill>
+              <LinearGradientBrush StartPoint="496.791224970703,415.915326508789" EndPoint="57.3592849707031,592.357196508789" MappingMode="Absolute" SpreadMethod="Pad">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#FF000000" Offset="0" ></GradientStop>
+                  <GradientStop Color="#00000000" Offset="1" ></GradientStop>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </Path.Fill>
+          </Path>
+          <Path Data="M154.6313,296.25873L403.64607,305.63904 403.47362,825.23045 169.928,768.9544 154.6313,296.25873z" Stroke="{x:Null}" StrokeThickness="1">
+            <Path.Fill>
+              <LinearGradientBrush StartPoint="270.873180854492,507.091489511719" EndPoint="438.825420854492,1056.03094951172" MappingMode="Absolute" SpreadMethod="Pad">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#FF000000" Offset="0" ></GradientStop>
+                  <GradientStop Color="#00000000" Offset="1" ></GradientStop>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </Path.Fill>
+          </Path>
+          <Path Data="M253.14422,300.00056L377.59503,304.59676 380.06989,819.3705 346.77522,811.59232 253.14422,300.00056z" Stroke="{x:Null}" StrokeThickness="1">
+            <Path.Fill>
+              <LinearGradientBrush StartPoint="253.14423,560.5694" EndPoint="379.71634,560.5694" MappingMode="Absolute" SpreadMethod="Pad">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#FFD5D5D5" Offset="0" ></GradientStop>
+                  <GradientStop Color="#00848484" Offset="1" ></GradientStop>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </Path.Fill>
+          </Path>
+          <Path Data="M169.8824,768.98913L169.35209,752.90246 403.05086,806.28906 402.99021,824.67381 169.8824,768.98913z" Stroke="{x:Null}" StrokeThickness="1">
+            <Path.Fill>
+              <LinearGradientBrush StartPoint="300.697164073486,788.788135776367" EndPoint="297.161614073486,803.637375776367" MappingMode="Absolute" SpreadMethod="Pad">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#FFD5D5D5" Offset="0" ></GradientStop>
+                  <GradientStop Color="#00848484" Offset="1" ></GradientStop>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </Path.Fill>
+          </Path>
+          <Path Data="M403.75796,306.01097L416.66267,300.5309 416.66265,803.28386 403.16698,824.85059 403.75796,306.01097z" Stroke="{x:Null}" StrokeThickness="1">
+            <Path.Fill>
+              <LinearGradientBrush StartPoint="403.166980976563,397.711215322266" EndPoint="416.662670976562,397.711215322266" MappingMode="Absolute" SpreadMethod="Pad">
+                <LinearGradientBrush.GradientStops>
+                  <GradientStop Color="#FFD5D5D5" Offset="0" ></GradientStop>
+                  <GradientStop Color="#00848484" Offset="1" ></GradientStop>
+                </LinearGradientBrush.GradientStops>
+              </LinearGradientBrush>
+            </Path.Fill>
+          </Path>
+          <Path Data="M352.15947,337.77874L391.73926,340.00093 390.97756,351.6339 351.56225,349.37156 352.15947,337.77874z" Fill="#FF3C36D3" Stroke="{x:Null}" StrokeThickness="1" ></Path>
+          <Path Data="M352.15947,371.93927L391.73926,374.16146 390.97756,385.79444 351.56225,383.53209 352.15947,371.93927z" Fill="#FF3C36D3" Stroke="{x:Null}" StrokeThickness="1" ></Path>
+          <Path Data="M352.15947,406.0998L391.73926,408.32199 390.97757,419.95497 351.56225,417.69262 352.15947,406.0998z" Fill="#FF3C36D3" Stroke="{x:Null}" StrokeThickness="1" ></Path>
+        </Canvas>
+        <Canvas.RenderTransform>
+          <MatrixTransform Matrix="0.952518999576569,0,0,0.806306004524231,78.7415313720703,104.895797729492" ></MatrixTransform>
+        </Canvas.RenderTransform>
+      </Canvas>
+      <Canvas.RenderTransform>
+        <MatrixTransform Matrix="1,0,0,1,-226.030776977539,-301.233947753906" ></MatrixTransform>
+      </Canvas.RenderTransform>
+    </Canvas>
+  </Canvas>
+</Canvas>
+	</Viewbox>
+</UserControl>

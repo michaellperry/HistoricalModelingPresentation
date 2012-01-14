@@ -1,0 +1,14 @@
+<ThoughtCloud_Presentation_ViewModels:BulletPointViewModel xmlns:ThoughtCloud_Presentation_ViewModels="clr-namespace:ThoughtCloud_Presentation.ViewModels" Title="Convallis aptent">
+	<ThoughtCloud_Presentation_ViewModels:BulletPointViewModel.Bullets>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Hidden" Text="Cras duis nunc"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Visible" Text="Amet ante vestibulum class curae"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Hidden" Text="Nam aenean arcu aliquam donec"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Visible" Text="Sed maecenas adipiscing dis"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Visible" Text="Mauris praesent accumsan integer quisque"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Visible" Text="Bibendum etiam"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Hidden" Text="Vivamus parturient est"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Visible" Text="Fusce curabitur"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Visible" Text="Diam vestibulum"/>
+		<ThoughtCloud_Presentation_ViewModels:BulletViewModel State="Visible" Text="Phasellus hac nullam vestibulum consequat"/>
+	</ThoughtCloud_Presentation_ViewModels:BulletPointViewModel.Bullets>
+</ThoughtCloud_Presentation_ViewModels:BulletPointViewModel>
