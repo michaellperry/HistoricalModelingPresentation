@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:HistoricalModelingPresentation_Controls="clr-namespace:HistoricalModelingPresentation.Controls" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="HistoricalModelingPresentation.Views.FulfillmentView"
+    xmlns:HistoricalModelingPresentation_Controls="clr-namespace:HistoricalModelingPresentation.Controls" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Itzben="clr-namespace:Itzben;assembly=Itzben" x:Class="HistoricalModelingPresentation.Views.FulfillmentView"
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
     
@@ -117,10 +117,210 @@
     					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
     				</Storyboard>
     			</VisualState>
+    			<VisualState x:Name="ShowInvoice">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceInvoice">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="154" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="InvoiceOrder" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="ShowDelivery">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="154" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="InvoiceOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceDelivery">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="154" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="InvoiceOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="106" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DeliveryShipment" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="ShowPayment">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="154" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="InvoiceOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="106" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DeliveryShipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlacePayment">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="154" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="InvoiceOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="106" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DeliveryShipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="213" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PaymentInvoice" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="ShowFollowUp">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="154" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="InvoiceOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="106" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DeliveryShipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="213" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PaymentInvoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FollowUp" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="FollowUp" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="FollowUp" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceFollowUp">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="154" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Invoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="InvoiceOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="106" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Delivery" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="DeliveryShipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="213" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="208" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Payment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PaymentInvoice" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FollowUp" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="FollowUp" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="FollowUp" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FollowUpPayment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="FollowUpDelivery" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
     		</VisualStateGroup>
     	</VisualStateManager.VisualStateGroups>
     
 		<Canvas x:Name="LayoutRoot" Height="300" Width="400">
+			<i:Interaction.Behaviors>
+				<Itzben:BindVisualStateBehavior StateName="{Binding State}"/>
+			</i:Interaction.Behaviors>
 			<HistoricalModelingPresentation_Controls:FactControl x:Name="Order" Text="Order" Canvas.Left="170" Canvas.Top="117" Opacity="0"/>
 			<HistoricalModelingPresentation_Controls:FactControl x:Name="Customer" Canvas.Left="160" Canvas.Top="64" Text="Customer" Opacity="0"/>
 			<HistoricalModelingPresentation_Controls:FactControl x:Name="Company" Canvas.Left="161" Canvas.Top="6" Text="Company" Opacity="0"/>
@@ -142,13 +342,29 @@
 				</HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
 			</HistoricalModelingPresentation_Controls:FactControl>
 			<ed:LineArrow x:Name="ShipmentOrder" Fill="#FF54521D" Height="11" Canvas.Left="153" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="144" Width="22" BendAmount="0" StartCorner="BottomLeft" Opacity="0"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Invoice" Canvas.Left="216" Canvas.Top="154" Text="Invoice" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Invoice" Canvas.Left="168" Canvas.Top="208" Text="Invoice" Opacity="0" RenderTransformOrigin="0.5,0.5">
+				<HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+					<CompositeTransform/>
+				</HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+			</HistoricalModelingPresentation_Controls:FactControl>
 			<ed:LineArrow x:Name="InvoiceOrder" Fill="#FF54521D" Height="11" Canvas.Left="211" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="145" Width="22" BendAmount="0" StartCorner="BottomRight" Opacity="0"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Delivery" Text="Delivery" Canvas.Left="106" Canvas.Top="208" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Delivery" Text="Delivery" Canvas.Left="164" Canvas.Top="234" Opacity="0" RenderTransformOrigin="0.5,0.5">
+				<HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+					<CompositeTransform/>
+				</HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+			</HistoricalModelingPresentation_Controls:FactControl>
 			<ed:LineArrow x:Name="DeliveryShipment" Fill="#FF54521D" Height="22" Canvas.Left="137" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="186" Width="0" StartCorner="BottomLeft" BendAmount="0" Opacity="0"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Payment" Text="Payment" Canvas.Left="213" Canvas.Top="208" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Payment" Text="Payment" Canvas.Left="161" Canvas.Top="249" Opacity="0" RenderTransformOrigin="0.5,0.5">
+				<HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+					<CompositeTransform/>
+				</HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+			</HistoricalModelingPresentation_Controls:FactControl>
 			<ed:LineArrow x:Name="PaymentInvoice" Fill="#FF54521D" Height="22" Canvas.Left="244" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="186" Width="0" StartCorner="BottomLeft" BendAmount="0" Opacity="0"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="FollowUp" Text="FollowUp" Canvas.Left="162" Canvas.Top="249" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="FollowUp" Text="FollowUp" Canvas.Left="162" Canvas.Top="249" Opacity="0" RenderTransformOrigin="0.5,0.5">
+				<HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+					<CompositeTransform/>
+				</HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+			</HistoricalModelingPresentation_Controls:FactControl>
 			<ed:LineArrow x:Name="FollowUpPayment" Fill="#FF54521D" Height="11" Canvas.Left="216" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="240" Width="22" BendAmount="0" StartCorner="BottomLeft" Opacity="0"/>
 			<ed:LineArrow x:Name="FollowUpDelivery" Fill="#FF54521D" Height="11" Canvas.Left="152" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="240" Width="22" BendAmount="0" StartCorner="BottomRight" Opacity="0"/>
     	</Canvas>
