@@ -64,6 +64,7 @@
     <Reference Include="Itzben">
       <HintPath>..\packages\itzben.1.0.0\lib\Silverlight 4.0\Itzben.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Drawing" />
     <Reference Include="Microsoft.Expression.Interactions" />
     <Reference Include="mscorlib" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -130,6 +131,9 @@
     </Compile>
     <Compile Include="Behaviors\BindingListener.cs" />
     <Compile Include="Behaviors\ButtonCommandBehavior.cs" />
+    <Compile Include="Controls\FactControl.xaml.cs">
+      <DependentUpon>FactControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\HighlighterConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -140,6 +144,7 @@
     <Compile Include="ViewModels\BrainViewModel.cs" />
     <Compile Include="ViewModels\BulletViewModel.cs" />
     <Compile Include="ViewModels\CorrespondenceViewModel.cs" />
+    <Compile Include="ViewModels\FulfillmentViewModel.cs" />
     <Compile Include="ViewModels\GiftCardViewModel.cs" />
     <Compile Include="ViewModels\IPresentationViewModel.cs" />
     <Compile Include="ViewModels\BulletPointViewModel.cs" />
@@ -159,6 +164,9 @@
     </Compile>
     <Compile Include="Views\FactsView.xaml.cs">
       <DependentUpon>FactsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FulfillmentView.xaml.cs">
+      <DependentUpon>FulfillmentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\GiftCardView.xaml.cs">
       <DependentUpon>GiftCardView.xaml</DependentUpon>
@@ -235,6 +243,10 @@
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\FactControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -260,6 +272,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\FactsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FulfillmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

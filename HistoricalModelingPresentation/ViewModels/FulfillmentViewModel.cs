@@ -1,8 +1,12 @@
-﻿using ThoughtCloud_Presentation.ViewModels;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using ThoughtCloud_Presentation.ViewModels;
 
 namespace HistoricalModelingPresentation.ViewModels
 {
-    public class GiftCardViewModel : IPresentationViewModel
+    public class FulfillmentViewModel : IPresentationViewModel
     {
         public bool Backward()
         {

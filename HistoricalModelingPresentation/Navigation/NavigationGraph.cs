@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using ThoughtCloud_Presentation.ViewModels;
+using HistoricalModelingPresentation.ViewModels;
 
 namespace ThoughtCloud.Presentation.Navigation
 {
@@ -20,6 +21,18 @@ namespace ThoughtCloud.Presentation.Navigation
             _viewModels.Add(new TextViewModel(
                 "Historical Modeling",
                 "Captures system state in the relationships among partially ordered historical facts."));
+            _viewModels.Add(new GiftCardViewModel());
+            _viewModels.Add(new BulletPointViewModel("Lessons learned")
+                .AddBullet("History is more important than state")
+                .AddBullet("Sometimes order matters"));
+            _viewModels.Add(new TextViewModel(
+                "Historical Modeling",
+                "Captures system state in the relationships among partially ordered historical facts."));
+            _viewModels.Add(new FulfillmentViewModel());
+            _viewModels.Add(new BulletPointViewModel("The rules of Historical Modeling")
+                .AddBullet("Facts are immutable")
+                .AddBullet("A fact knows its predecessors")
+                .AddBullet("A fact is identified by its type, fields, and predecessors"));
         }
 
         public void Start()
