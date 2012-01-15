@@ -8,34 +8,149 @@
     d:DesignHeight="300" d:DesignWidth="400">
     
     <Viewbox>
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="VisualStateGroup">
+    			<VisualStateGroup.Transitions>
+    				<VisualTransition GeneratedDuration="0:0:0.3"/>
+    			</VisualStateGroup.Transitions>
+    			<VisualState x:Name="Start"/>
+    			<VisualState x:Name="PlaceOrder">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceCustomer">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceCompany">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceOrderB">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderB" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderBCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="216" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderB" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="211" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderBCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="127" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="161" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="21" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="27" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="OrderBCustomer" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceCustomer2">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderB" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderBCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="177" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderB" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="172" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderBCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="84" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="118" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="21" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="27" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="OrderBCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer2" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer2Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="206" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Customer2" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="24" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Customer2Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="210" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Customer2Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="124" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="27" Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="160" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderC" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="267" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderCCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="277" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="OrderC" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="BackToOne">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="ShowShipment">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1.3" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="PlaceShipment">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Order" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Customer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="OrderCustomer" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Company" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CustomerCompany" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleX)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.ScaleY)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ShipmentOrder" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="152" Storyboard.TargetProperty="(Canvas.Top)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="102" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="Shipment" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
     
 		<Canvas x:Name="LayoutRoot" Height="300" Width="400">
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Order" Text="Order" Canvas.Left="170" Canvas.Top="117"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Customer" Canvas.Left="160" Canvas.Top="64" Text="Customer"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Company" Canvas.Left="161" Canvas.Top="6" Text="Company"/>
-			<ed:LineArrow x:Name="OrderCustomer" Fill="#FF54521D" Height="22" Canvas.Left="193" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="96" Width="0" StartCorner="BottomLeft" BendAmount="0"/>
-			<ed:LineArrow x:Name="CustomerCompany" Fill="#FF54521D" Height="25" Canvas.Left="193" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="39" Width="1" RenderTransformOrigin="0.5,0.5" StartCorner="BottomRight" BendAmount="0">
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Order" Text="Order" Canvas.Left="170" Canvas.Top="117" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Customer" Canvas.Left="160" Canvas.Top="64" Text="Customer" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Company" Canvas.Left="161" Canvas.Top="6" Text="Company" Opacity="0"/>
+			<ed:LineArrow x:Name="OrderCustomer" Fill="#FF54521D" Height="22" Canvas.Left="193" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="96" Width="0" StartCorner="BottomLeft" BendAmount="0" Opacity="0"/>
+			<ed:LineArrow x:Name="CustomerCompany" Fill="#FF54521D" Height="25" Canvas.Left="193" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="39" Width="1" RenderTransformOrigin="0.5,0.5" StartCorner="BottomRight" BendAmount="0" Opacity="0">
 				<ed:LineArrow.RenderTransform>
 					<CompositeTransform ScaleX="-1"/>
 				</ed:LineArrow.RenderTransform>
 			</ed:LineArrow>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="OrderB" Canvas.Left="174" Canvas.Top="113" Text="Order B" d:IsHidden="True"/>
-			<ed:LineArrow x:Name="OrderBCustomer" Fill="#FF54521D" Height="22" Canvas.Left="161" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="91" Width="32" StartCorner="BottomRight" BendAmount="0" d:IsHidden="True"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Customer2" Canvas.Left="216" Canvas.Top="59" Text="Customer 2" d:IsHidden="True"/>
-			<ed:LineArrow x:Name="Customer2Company" Fill="#FF54521D" Height="22" Canvas.Left="216" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="38" Width="32" StartCorner="BottomRight" BendAmount="0" d:IsHidden="True"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="OrderC" Canvas.Left="289" Canvas.Top="113" Text="Order B" d:IsHidden="True"/>
-			<ed:LineArrow x:Name="OrderCCustomer" Fill="#FF54521D" Height="22" Canvas.Left="281" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="91" Width="32" StartCorner="BottomRight" BendAmount="0" d:IsHidden="True"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Shipment" Canvas.Left="103" Canvas.Top="154" Text="Shipment"/>
-			<ed:LineArrow x:Name="ShipmentOrder" Fill="#FF54521D" Height="11" Canvas.Left="152" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="145" Width="22" BendAmount="0" StartCorner="BottomLeft"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Invoice" Canvas.Left="216" Canvas.Top="154" Text="Invoice"/>
-			<ed:LineArrow x:Name="InvoiceOrder" Fill="#FF54521D" Height="11" Canvas.Left="211" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="145" Width="22" BendAmount="0" StartCorner="BottomRight"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Delivery" Text="Delivery" Canvas.Left="106" Canvas.Top="208"/>
-			<ed:LineArrow x:Name="DeliveryShipment" Fill="#FF54521D" Height="22" Canvas.Left="137" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="186" Width="0" StartCorner="BottomLeft" BendAmount="0"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="Payment" Text="Payment" Canvas.Left="213" Canvas.Top="208"/>
-			<ed:LineArrow x:Name="PaymentInvoice" Fill="#FF54521D" Height="22" Canvas.Left="244" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="186" Width="0" StartCorner="BottomLeft" BendAmount="0"/>
-			<HistoricalModelingPresentation_Controls:FactControl x:Name="FollowUp" Text="FollowUp" Canvas.Left="162" Canvas.Top="249"/>
-			<ed:LineArrow x:Name="FollowUpPayment" Fill="#FF54521D" Height="11" Canvas.Left="216" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="240" Width="22" BendAmount="0" StartCorner="BottomLeft"/>
-			<ed:LineArrow x:Name="FollowUpDelivery" Fill="#FF54521D" Height="11" Canvas.Left="152" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="240" Width="22" BendAmount="0" StartCorner="BottomRight"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="OrderB" Canvas.Left="174" Canvas.Top="117" Text="Order B" Opacity="0"/>
+			<ed:LineArrow x:Name="OrderBCustomer" Fill="#FF54521D" Height="22" Canvas.Left="193" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="95" Width="0" StartCorner="BottomRight" BendAmount="0" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Customer2" Canvas.Left="155" Canvas.Top="64" Text="Customer 2" Opacity="0"/>
+			<ed:LineArrow x:Name="Customer2Company" Fill="#FF54521D" Height="22" Canvas.Left="193" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="39" Width="1" StartCorner="BottomRight" BendAmount="0" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="OrderC" Canvas.Left="207" Canvas.Top="117" Text="Order C" Opacity="0"/>
+			<ed:LineArrow x:Name="OrderCCustomer" Fill="#FF54521D" Height="22" Canvas.Left="198" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="94" Width="32" StartCorner="BottomRight" BendAmount="0" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Shipment" Canvas.Left="158" Canvas.Top="193" Text="Shipment" Opacity="0" RenderTransformOrigin="0.5,0.5">
+				<HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+					<CompositeTransform/>
+				</HistoricalModelingPresentation_Controls:FactControl.RenderTransform>
+			</HistoricalModelingPresentation_Controls:FactControl>
+			<ed:LineArrow x:Name="ShipmentOrder" Fill="#FF54521D" Height="11" Canvas.Left="153" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="144" Width="22" BendAmount="0" StartCorner="BottomLeft" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Invoice" Canvas.Left="216" Canvas.Top="154" Text="Invoice" Opacity="0"/>
+			<ed:LineArrow x:Name="InvoiceOrder" Fill="#FF54521D" Height="11" Canvas.Left="211" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="145" Width="22" BendAmount="0" StartCorner="BottomRight" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Delivery" Text="Delivery" Canvas.Left="106" Canvas.Top="208" Opacity="0"/>
+			<ed:LineArrow x:Name="DeliveryShipment" Fill="#FF54521D" Height="22" Canvas.Left="137" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="186" Width="0" StartCorner="BottomLeft" BendAmount="0" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="Payment" Text="Payment" Canvas.Left="213" Canvas.Top="208" Opacity="0"/>
+			<ed:LineArrow x:Name="PaymentInvoice" Fill="#FF54521D" Height="22" Canvas.Left="244" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="186" Width="0" StartCorner="BottomLeft" BendAmount="0" Opacity="0"/>
+			<HistoricalModelingPresentation_Controls:FactControl x:Name="FollowUp" Text="FollowUp" Canvas.Left="162" Canvas.Top="249" Opacity="0"/>
+			<ed:LineArrow x:Name="FollowUpPayment" Fill="#FF54521D" Height="11" Canvas.Left="216" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="240" Width="22" BendAmount="0" StartCorner="BottomLeft" Opacity="0"/>
+			<ed:LineArrow x:Name="FollowUpDelivery" Fill="#FF54521D" Height="11" Canvas.Left="152" Stroke="#FF918D2C" StrokeThickness="2" Canvas.Top="240" Width="22" BendAmount="0" StartCorner="BottomRight" Opacity="0"/>
     	</Canvas>
 	</Viewbox>
 </UserControl>
