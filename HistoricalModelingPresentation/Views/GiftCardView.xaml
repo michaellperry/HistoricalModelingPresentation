@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:ThoughtCloud_Presentation="clr-namespace:ThoughtCloud_Presentation" xmlns:HistoricalModelingPresentation="clr-namespace:HistoricalModelingPresentation" x:Class="HistoricalModelingPresentation.Views.GiftCardView"
+    xmlns:ThoughtCloud_Presentation="clr-namespace:ThoughtCloud_Presentation" xmlns:HistoricalModelingPresentation="clr-namespace:HistoricalModelingPresentation" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Itzben="clr-namespace:Itzben;assembly=Itzben" x:Class="HistoricalModelingPresentation.Views.GiftCardView"
     mc:Ignorable="d"
     d:DesignHeight="300" d:DesignWidth="400">
 	<UserControl.Resources>
@@ -13,103 +13,315 @@
 	</UserControl.Resources>
     
     <Viewbox>
-        <Grid x:Name="LayoutRoot" Width="400" Height="300">
-        	<Grid Margin="153,88,156,111">
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="VisualStateGroup">
+    			<VisualStateGroup.Transitions>
+    				<VisualTransition GeneratedDuration="0:0:0.3"/>
+    				<VisualTransition From="IncomingTransaction" GeneratedDuration="0:0:0.3" To="ConfirmFail">
+    					<Storyboard>
+    						<DoubleAnimation Duration="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="border"/>
+    					</Storyboard>
+    				</VisualTransition>
+    				<VisualTransition From="Retry" GeneratedDuration="0:0:0.3" To="QueueSeed">
+    					<Storyboard>
+    						<DoubleAnimation Duration="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="border"/>
+    					</Storyboard>
+    				</VisualTransition>
+    			</VisualStateGroup.Transitions>
+    			<VisualState x:Name="Start"/>
+    			<VisualState x:Name="Restaurants">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="InternetDown">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.665" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="LocalStorage">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.665" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="OutgoingQueue">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.665" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="OutgoingTransaction">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.665" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="InternetUp">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="-70" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="IncomingQueue">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="-70" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="IncomingTransaction">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="-70" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="79" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="ConfirmFail">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="-70" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="Retry">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="-70" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="79" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="QueueSeed">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="AddValue">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="SendSeed">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="79" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="SendAddValue">
+    				<Storyboard>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Clear" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Stormy" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="49" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="CashRegister" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="-70" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="LocalTransaction" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0.995" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ServerQueue" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="226" Storyboard.TargetProperty="(Canvas.Left)" Storyboard.TargetName="ServerTable" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="79" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    					<DoubleAnimation Duration="0" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="border" d:IsOptimized="True"/>
+    				</Storyboard>
+    			</VisualState>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
+        <Canvas x:Name="LayoutRoot" Height="300" Width="400">
+        	<i:Interaction.Behaviors>
+        		<Itzben:BindVisualStateBehavior StateName="{Binding State}"/>
+        	</i:Interaction.Behaviors>
+    		<Grid Height="101" Canvas.Left="153" Canvas.Top="88" Width="91">
 
-        		<ThoughtCloud_Presentation:Cloud x:Name="Clear" Margin="0,3,0,34"/>
+    			<ThoughtCloud_Presentation:Cloud x:Name="Clear" Margin="0,3,0,34" Opacity="0"/>
 
-        		<HistoricalModelingPresentation:StormCloud x:Name="Stormy" Width="91"/>
+    			<HistoricalModelingPresentation:StormCloud x:Name="Stormy" Width="91" Opacity="0"/>
 
-        	</Grid>
-        	<Border x:Name="LocalTable" Margin="0,0,35,31" VerticalAlignment="Bottom" BorderThickness="2" BorderBrush="{StaticResource DataBorderBrush}" Background="{StaticResource DataBackgroundBrush}" HorizontalAlignment="Right" Width="139">
-        		<Grid>
-        			<Grid.RowDefinitions>
-        				<RowDefinition Height="Auto"/>
-        				<RowDefinition Height="Auto"/>
-        				<RowDefinition Height="Auto"/>
-        			</Grid.RowDefinitions>
-        			<Grid.ColumnDefinitions>
-        				<ColumnDefinition Width="0.284*"/>
-        				<ColumnDefinition Width="0.716*"/>
-        			</Grid.ColumnDefinitions>
-        			<Border Margin="0" d:LayoutOverrides="Width, Height">
-        				<TextBlock TextWrapping="Wrap" Text="123" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Grid.Column="1" Margin="0" d:LayoutOverrides="Width, Height" >
-        				<TextBlock TextWrapping="Wrap" Text="$20.00" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Margin="0" Grid.Row="1" d:LayoutOverrides="Width, Height" Background="#36000000" >
-        				<TextBlock TextWrapping="Wrap" Text="456" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Grid.Column="1" Margin="0" Grid.Row="1" d:LayoutOverrides="Width" Background="{StaticResource DataOddBackgroundBrush}" >
-        				<TextBlock TextWrapping="Wrap" Text="$40.00" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
-        				<TextBlock TextWrapping="Wrap" Text="789" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Grid.Column="1" Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
-        				<TextBlock TextWrapping="Wrap" Text="$12.47" Foreground="White" Margin="4,2"/>
-        			</Border>
-        		</Grid>
-        	</Border>
-        	<HistoricalModelingPresentation:CashRegister x:Name="CashRegister" Margin="49,0,0,15" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="87" Width="82"/>
-        	<Border x:Name="LocalQueue" Height="53" Margin="153,0,192,37" VerticalAlignment="Bottom" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,0,2,2">
-        		<Grid>
-        			<Grid.RowDefinitions>
-        				<RowDefinition Height="0.38*"/>
-        				<RowDefinition Height="Auto"/>
-        			</Grid.RowDefinitions>
-        			<Border Grid.Row="1" Background="{StaticResource DataOddBackgroundBrush}">
-        				<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2"><Run Text="456"/><LineBreak/><Run Text="-$15.00"/></TextBlock>
-        			</Border>
-        		</Grid>
-        	</Border>
-        	<Border x:Name="ServerQueue" Margin="153,8,192,0" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,2,2,0" Height="76" VerticalAlignment="Top">
-        		<Grid>
-        			<Grid.RowDefinitions>
-        				<RowDefinition Height="Auto"/>
-        				<RowDefinition Height="Auto"/>
-        				<RowDefinition Height="0.282*"/>
-        			</Grid.RowDefinitions>
-        			<Border Background="{StaticResource DataOddBackgroundBrush}">
-        				<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2"><Run Text="456"/><LineBreak/><Run Text="-$15.00"/></TextBlock>
-        			</Border>
-        			<Border Grid.Row="1">
-        				<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2" Text="123 -$13.42"/>
-        			</Border>
-        		</Grid>
-        	</Border>
-        	<Border x:Name="ServerTable" Margin="0,15,35,0" BorderThickness="2" BorderBrush="{StaticResource DataBorderBrush}" Background="{StaticResource DataBackgroundBrush}" HorizontalAlignment="Right" Width="139" VerticalAlignment="Top">
-        		<Grid>
-        			<Grid.RowDefinitions>
-        				<RowDefinition Height="Auto"/>
-        				<RowDefinition Height="Auto"/>
-        				<RowDefinition Height="Auto"/>
-        			</Grid.RowDefinitions>
-        			<Grid.ColumnDefinitions>
-        				<ColumnDefinition Width="0.284*"/>
-        				<ColumnDefinition Width="0.716*"/>
-        			</Grid.ColumnDefinitions>
-        			<Border Margin="0" d:LayoutOverrides="Width, Height">
-        				<TextBlock TextWrapping="Wrap" Text="123" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Grid.Column="1" Margin="0" d:LayoutOverrides="Width, Height" >
-        				<TextBlock TextWrapping="Wrap" Text="$20.00" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Margin="0" Grid.Row="1" d:LayoutOverrides="Width, Height" Background="#36000000" >
-        				<TextBlock TextWrapping="Wrap" Text="456" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Grid.Column="1" Margin="0" Grid.Row="1" d:LayoutOverrides="Width" Background="{StaticResource DataOddBackgroundBrush}" >
-        				<TextBlock TextWrapping="Wrap" Text="$40.00" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
-        				<TextBlock TextWrapping="Wrap" Text="789" Foreground="White" Margin="4,2"/>
-        			</Border>
-        			<Border Grid.Column="1" Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
-        				<TextBlock TextWrapping="Wrap" Text="$12.47" Foreground="White" Margin="4,2"/>
-        			</Border>
-        		</Grid>
-        	</Border>
-        </Grid>
+    		</Grid>
+    		<Border x:Name="LocalTable" BorderThickness="2" BorderBrush="{StaticResource DataBorderBrush}" Background="{StaticResource DataBackgroundBrush}" Width="139" Opacity="0" Canvas.Left="226" Canvas.Top="205">
+    			<Grid>
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="Auto"/>
+    					<RowDefinition Height="Auto"/>
+    					<RowDefinition Height="Auto"/>
+    				</Grid.RowDefinitions>
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.284*"/>
+    					<ColumnDefinition Width="0.716*"/>
+    				</Grid.ColumnDefinitions>
+    				<Border Margin="0" d:LayoutOverrides="Width, Height">
+    					<TextBlock TextWrapping="Wrap" Text="123" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Grid.Column="1" Margin="0" d:LayoutOverrides="Width, Height" >
+    					<TextBlock TextWrapping="Wrap" Text="{Binding LocalCardBalance123}" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Margin="0" Grid.Row="1" d:LayoutOverrides="Width, Height" Background="#36000000" >
+    					<TextBlock TextWrapping="Wrap" Text="456" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Grid.Column="1" Margin="0" Grid.Row="1" d:LayoutOverrides="Width" Background="{StaticResource DataOddBackgroundBrush}" >
+    					<TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="{Binding LocalCardBalance456}" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+    					<TextBlock TextWrapping="Wrap" Text="789" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Grid.Column="1" Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+    					<TextBlock TextWrapping="Wrap" Text="$12.47" Foreground="White" Margin="4,2"/>
+    				</Border>
+    			</Grid>
+    		</Border>
+    		<HistoricalModelingPresentation:CashRegister x:Name="CashRegister" Height="87" Width="82" Opacity="0" Canvas.Left="139" Canvas.Top="198"/>
+    		<Border x:Name="LocalQueue" Height="53" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,0,2,2" Opacity="0" Canvas.Left="153" Canvas.Top="210" Width="55">
+    			<Grid>
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="0.38*"/>
+    					<RowDefinition Height="Auto"/>
+    				</Grid.RowDefinitions>
+    				<Border x:Name="LocalTransaction" Grid.Row="1" Background="{StaticResource DataOddBackgroundBrush}" Opacity="0" RenderTransformOrigin="0.5,0.5">
+    					<Border.RenderTransform>
+    						<CompositeTransform/>
+    					</Border.RenderTransform>
+    					<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2" Text="{Binding LocalTransactionBody}"/>
+    				</Border>
+    			</Grid>
+    		</Border>
+    		<Border x:Name="ServerQueue" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,2,2,0" Height="76" Opacity="0" Canvas.Left="153" Canvas.Top="8" Width="55">
+    			<Grid>
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="Auto"/>
+    					<RowDefinition Height="Auto"/>
+    					<RowDefinition Height="0.282*"/>
+    				</Grid.RowDefinitions>
+    				<Border x:Name="border" Grid.Row="1" Background="{StaticResource DataOddBackgroundBrush}" RenderTransformOrigin="0.5,0.5">
+    					<Border.RenderTransform>
+    						<CompositeTransform/>
+    					</Border.RenderTransform>
+    					<TextBlock TextWrapping="Wrap" Foreground="White" Margin="2" Text="{Binding ServerTransactionBody}"/>
+    				</Border>
+    			</Grid>
+    		</Border>
+    		<Border x:Name="ServerTable" BorderThickness="2" BorderBrush="{StaticResource DataBorderBrush}" Background="{StaticResource DataBackgroundBrush}" Width="139" Opacity="0" Canvas.Left="130" Canvas.Top="15">
+    			<Grid>
+    				<Grid.RowDefinitions>
+    					<RowDefinition Height="Auto"/>
+    					<RowDefinition Height="Auto"/>
+    					<RowDefinition Height="Auto"/>
+    				</Grid.RowDefinitions>
+    				<Grid.ColumnDefinitions>
+    					<ColumnDefinition Width="0.284*"/>
+    					<ColumnDefinition Width="0.716*"/>
+    				</Grid.ColumnDefinitions>
+    				<Border Margin="0" d:LayoutOverrides="Width, Height">
+    					<TextBlock TextWrapping="Wrap" Text="123" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Grid.Column="1" Margin="0" d:LayoutOverrides="Width, Height" >
+    					<TextBlock x:Name="textBlock2" TextWrapping="Wrap" Text="{Binding ServerCardBalance123}" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Margin="0" Grid.Row="1" d:LayoutOverrides="Width, Height" Background="#36000000" >
+    					<TextBlock TextWrapping="Wrap" Text="456" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Grid.Column="1" Margin="0" Grid.Row="1" d:LayoutOverrides="Width" Background="{StaticResource DataOddBackgroundBrush}" >
+    					<TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="{Binding ServerCardBalance456}" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+    					<TextBlock TextWrapping="Wrap" Text="789" Foreground="White" Margin="4,2"/>
+    				</Border>
+    				<Border Grid.Column="1" Margin="0" Grid.Row="2" d:LayoutOverrides="Width" >
+    					<TextBlock TextWrapping="Wrap" Text="$12.47" Foreground="White" Margin="4,2"/>
+    				</Border>
+    			</Grid>
+    		</Border>
+    	</Canvas>
     </Viewbox>
 </UserControl>
