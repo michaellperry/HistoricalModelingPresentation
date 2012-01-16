@@ -33,6 +33,7 @@ namespace ThoughtCloud.Presentation.Navigation
                 .AddBullet("Facts are immutable")
                 .AddBullet("A fact knows its predecessors")
                 .AddBullet("A fact is identified by its type, fields, and predecessors"));
+            _viewModels.Add(new TitleViewModel());
         }
 
         public void Start()
