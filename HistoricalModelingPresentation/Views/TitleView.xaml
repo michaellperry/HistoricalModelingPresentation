@@ -10,7 +10,7 @@
     <Viewbox x:Name="LayoutRoot">
         <Grid Height="327" Width="279">
             <TextBlock Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="18.667" TextAlignment="Center"><Run Text="Synchronizing Data for"/><LineBreak/><Run Text="Line-of-Business Application"/></TextBlock>
-            <TextBlock Margin="125,0,8,23" TextWrapping="Wrap" Foreground="#FFBEBEBE" FontSize="12" Height="75" VerticalAlignment="Bottom"><Run Text="Michael L Perry"/><LineBreak/><Run Text="HistoricalModeling.com"/><LineBreak/><Run Text="@MichaelLPerry"/></TextBlock>
+            <TextBlock Margin="109,0,8,23" TextWrapping="Wrap" Foreground="#FFBEBEBE" FontSize="12" Height="75" VerticalAlignment="Bottom"><Run Text="Michael L Perry"/><LineBreak/><Run Text="HistoricalModeling.com"/><LineBreak/><Run Text="mperry@mallardsoft.com"/><LineBreak/><Run Text="@MichaelLPerry"/></TextBlock>
         </Grid>
     </Viewbox>
 </UserControl>

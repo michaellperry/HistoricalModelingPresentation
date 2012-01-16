@@ -262,7 +262,7 @@
     			</Grid>
     		</Border>
     		<HistoricalModelingPresentation:CashRegister x:Name="CashRegister" Height="87" Width="82" Opacity="0" Canvas.Left="139" Canvas.Top="198"/>
-    		<Border x:Name="LocalQueue" Height="53" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,0,2,2" Opacity="0" Canvas.Left="153" Canvas.Top="210" Width="55">
+    		<Border x:Name="LocalQueue" Height="53" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,0,2,2" Opacity="0" Canvas.Left="144" Canvas.Top="210" Width="64">
     			<Grid>
     				<Grid.RowDefinitions>
     					<RowDefinition Height="0.38*"/>
@@ -276,7 +276,7 @@
     				</Border>
     			</Grid>
     		</Border>
-    		<Border x:Name="ServerQueue" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,2,2,0" Height="76" Opacity="0" Canvas.Left="153" Canvas.Top="8" Width="55">
+    		<Border x:Name="ServerQueue" Background="{StaticResource DataBackgroundBrush}" BorderBrush="{StaticResource DataBorderBrush}" BorderThickness="2,2,2,0" Height="76" Opacity="0" Canvas.Left="144" Canvas.Top="8" Width="64">
     			<Grid>
     				<Grid.RowDefinitions>
     					<RowDefinition Height="Auto"/>
